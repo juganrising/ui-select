@@ -1,7 +1,7 @@
 /*!
  * ui-select
  * http://github.com/angular-ui/ui-select
- * Version: 0.19.7 - 2017-04-15T14:28:36.649Z
+ * Version: 0.19.7 - 2018-05-29T14:28:36.649Z
  * License: MIT
  */
 
@@ -1448,7 +1448,7 @@ uis.directive('uiSelect',
 
            // Hide the dropdown so there is no flicker until $timeout is done executing.
            if ($select.search === '' && !opened) {
-              dropdown[0].style.opacity = 0;
+              //dropdown[0].style.opacity = 0;
               opened = true;
            }
 
@@ -1470,7 +1470,7 @@ uis.directive('uiSelect',
             }
 
             // Reset the position of the dropdown.
-            dropdown[0].style.opacity = 0;
+            //dropdown[0].style.opacity = 0;
             dropdown[0].style.position = '';
             dropdown[0].style.top = '';
             element.removeClass(directionUpClassName);
@@ -2095,7 +2095,7 @@ uis.directive('uiSelectSingle', ['$timeout','$compile', function($timeout, $comp
       });
 
       //Idea from: https://github.com/ivaynberg/select2/blob/79b5bf6db918d7560bdd959109b7bcfb47edaf43/select2.js#L1954
-      var focusser = angular.element("<input ng-disabled='$select.disabled' class='ui-select-focusser ui-select-offscreen' type='text' id='{{ $select.focusserId }}' aria-label='{{ $select.focusserTitle }}' aria-haspopup='true' role='button' />");
+      var focusser = angular.element("<input ng-disabled='$select.disabled' ng-hide='true' class='ui-select-focusser ui-select-offscreen' type='text' id='{{ $select.focusserId }}' aria-label='{{ $select.focusserTitle }}' aria-haspopup='true' role='button' />");
       $compile(focusser)(scope);
       $select.focusser = focusser;
 
